@@ -1,0 +1,157 @@
+
+<!-- saved from url=(0060)http://www-ens.iro.umontreal.ca/~syriani/courses/rapport.htm -->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/main.css"/>
+        <style id="stndz-style">
+        </style>
+    <title>IFT3911 DM2 - Hiv 2019</title>
+</head>
+    <body>
+        <h6 style="text-align: center;">Dans ce document, l’emploi du masculin pour désigner des personnes n’a d’autres fins que celle d’alléger le texte.</h6>
+        <h2>
+            Information générale</h2>
+        <p>
+            <span style="font-weight: bold;">Nom: </span>EID Alain
+            <br>
+            <span style="font-weight: bold;">Matricule: </span>20061065
+            <br>
+            <span style="font-weight: bold;">Courriel: </span>alain.eid@umontreal.ca
+            <br>
+            <span style="font-weight: bold;">temps mis: </span>22 heures
+        </p>
+        <p>
+            <span style="font-weight: bold;">Nom: </span>STEENHAUT Sami
+            <br>
+            <span style="font-weight: bold;">Matricule: </span>20061630
+            <br>
+            <span style="font-weight: bold;">Courriel: </span>sami.steenhaut@umontreal.ca
+            <br>
+            <span style="font-weight: bold;">temps mis: </span>23 heures
+        </p>
+        <p>
+            <span style="font-weight: bold;">Nom: </span>VOICULESCU Eduard
+            <br>
+            <span style="font-weight: bold;">Matricule: </span>20078235
+            <br>
+            <span style="font-weight: bold;">Courriel: </span>eduard.voiculescu@umontreal.ca
+            <br>
+            <span style="font-weight: bold;">temps mis: </span>25 heures
+        </p>
+        <h2>
+            Distribution des tâches</h2>
+        <p>
+            <span style="font-weight: bold;">Soumetteur: </span>VOICULESCU Eduard
+        </p>
+        <table class="item">
+            <thead>
+                <tr>
+                    <th>
+                        Tâche
+                    </th>
+                    <th>
+                        Alain
+                    </th>
+                    <th>
+                        Sami
+                    </th>
+                    <th>
+                        Eduard
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Design logiciel [50%] :<br>
+                        <ul>
+                            <li>Diagramme de classe pour le patron de fabriques [7%]</li>
+                            <li>Diagramme de séquence ou de collaboration pour le patron de fabriques [3%]</li>
+                            <li>Diagramme de classe pour le patron du singleton [2%]</li>
+                            <li>Diagramme de classe pour le patron d'état [4%]</li>
+                            <li>Diagramme de séquence ou de collaboration pour le patron d'état [2%]</li>
+                            <li>Diagramme de classe pour le patron de l'observateur [7%]</li>
+                            <li>Diagramme de séquence ou de collaboration pour le patron de l'observateur [3%]</li>
+                            <li>Diagramme de classe pour le patron de commande [8%]</li>
+                            <li>Diagramme de séquence ou de collaboration pour le patron de commande [3%]</li>
+                            <li>Diagramme de classe pour le patron du visiteur [8%]</li>
+                            <li>Diagramme de paquets [3%]</li>
+                        </ul>
+                    </td>
+                    <td>33%</td>
+                    <td>33%</td>
+                    <td>33%</td>
+                </tr>
+                <tr>
+                    <td>
+                        Discussion et justification de la qualité du design [10%] : <br>
+                    </td>
+                    <td>33%</td>
+                    <td>33%</td>
+                    <td>33%</td>
+                </tr>
+                <tr>
+                    <td>
+                        Génération de code et implémentation du système en Java [20%]:
+                        <ul>
+                            <li>Les six patrons de conception requis [15%] </li>
+                            <li>Le reste de l'application [5%]</li>
+                            <li>Omettre le fichier readme.txt [-2%]</li>
+                        </ul>
+                    </td>
+                    <td>33%</td>
+                    <td>33%</td>
+                    <td>33%</td>
+                </tr>
+                <tr>
+                    <td>
+                        Modélisation et analyse du réseau de Pétri [20%]
+                    </td>
+                    <td>33%</td>
+                    <td>33%</td>
+                    <td>33%</td>
+                </tr>
+                <tr>
+                    <td>
+                        Bonus (pas de note partielle) [10%]
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Début section : Design logiciel-->
+        <!-- Fin section : Design logiciel-->
+
+        <!-- Début Discussion et justification de la qualité du design -->
+        <!-- Fin Discussion et justification de la qualité du design -->
+
+        <!-- Début Génération de code et implémentation du système en Java -->
+        <!-- Fin Génération de code et implémentation du système en Java -->
+
+        <!-- Début Modélisation et analyse du réseau de Pétri-->
+        <!-- Fin Modélisation et analyse du réseau de Pétri-->
+
+        <!-- Début section : Justifications -->
+        <h3>
+            Justifications:
+        </h3>
+        <ul>
+            <li>
+                En concevant cette dernière itération du projet, nous avons réaliser que les différentes database que nous utilisons 
+                (UserDatabase, ReservationDatabase, TransactionDatabase, TransportDatabase, DestinationCourseDatabase, ServiceDatabase et TransportCompanyDatabase) 
+                sont identiques (ou presque) en terme d'implémentation. Pour facilité le patron de commande et le patron de l'orbservateur, nous avons opté
+                de créer un object DatabaseObject d'où les autres databases respectives vont héritées. Cela nous permet énormément de facilité
+                la commande Undo. D'autre part, cela rajoute également de la modularisation au niveau de l'implémentation.
+            </li>
+            <li>
+                Un autre point, dans le patron de commande, il était possible que toutes les commandes faites par le volet administratifs soient héritées de <i>AdminCommands</i> mais
+                question de desgin, nous avons décidé de rappatrier les commandes de créations, modifications et de suppressions sur le même niveau.
+            </li>
+        </ul>
+        <!-- Fin section : Justifications-->
+    </body>
+</html>
