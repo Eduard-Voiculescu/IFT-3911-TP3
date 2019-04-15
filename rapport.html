@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css"/>
         <style id="stndz-style">
         </style>
-    <title>IFT3911 DM2 - Hiv 2019</title>
+    <title>IFT3911 DM3 - Hiv 2019</title>
 </head>
     <body>
         <h6 style="text-align: center;">Dans ce document, l’emploi du masculin pour désigner des personnes n’a d’autres fins que celle d’alléger le texte.</h6>
@@ -124,15 +124,72 @@
         </table>
 
         <!-- Début section : Design logiciel-->
+        <h3>Design logiciel:</h3>
+        <h4>Diagramme de classe pour le patron de fabriques [7%]</h4>
+        <img src="Image/ClassDiagramFabriques.jpg" />
+        <h4>Diagramme de séquence ou de collaboration pour le patron de fabriques [3%]</h4>
+        <img src="Image/DiagrammeSequenceFabriques.jpg" />
+        <h4>Diagramme de classe pour le patron du singleton [2%]</h4>
+        <img src="Image/Singleton.jpg" />
+        <h4>Diagramme de classe pour le patron d'état [4%]</h4>
+        <img src="Image/ClassDiagramEtat.jpg" />
+        <h4>Diagramme de séquence ou de collaboration pour le patron d'état [2%]</h4>
+        <img src="Image/SequenceDiagramEtat.jpg" />
+        <h4>Diagramme de classe pour le patron de l'observateur [7%]</h4>
+        <img src="Image/ClassDiagramObservateur.jpg" />
+        <h4>Diagramme de séquence ou de collaboration pour le patron de l'observateur [3%]</h4>
+        <img src="Image/SequenceDiagramOvservateur.jpg" />
+        <h4>Diagramme de classe pour le patron de commande [8%]</h4>
+        <img src="Image/Commande.jpg" />
+        <h4>Diagramme de séquence ou de collaboration pour le patron de commande [3%]</h4>
+        <img src="Image/CommandPatternSequenceDiagram.jpg" />
+        <h4>Diagramme de classe pour le patron du visiteur [8%]</h4>
+        <img src="Image/ClassDiagramVisiteur.jpg" />
+        <h4>Diagramme de paquets [3%]</h4>
+        <img src="Image/DiagrammeDePaquet.jpg" />
         <!-- Fin section : Design logiciel-->
 
         <!-- Début Discussion et justification de la qualité du design -->
         <!-- Fin Discussion et justification de la qualité du design -->
 
         <!-- Début Génération de code et implémentation du système en Java -->
+        <h3>Génération de code et implémentation du système en Java [20%]:</h3>
+        <p>
+            Faute de manque de temps et de manque de préparation, nous avons omit de mettre les fichiers Java.
+            Une fois le code générée, nous avons jouer avec pendant quelques moments pour arriver à la conclusion
+            que nous ne seront pas capable de faire fonctionner ce dernier pour la remise. 
+            Un fichier readme.txt a été inclu dans le dossier intitulé Java, mais le fichier readme.txt ne contient rien concernant le code Java. 
+        </p>
         <!-- Fin Génération de code et implémentation du système en Java -->
 
         <!-- Début Modélisation et analyse du réseau de Pétri-->
+        <h3>Modélisation et analyse du réseau de Pétri [20%]</h3>
+        <h4>Réseau de Pétri - a:</h4>
+        <img src="Image/reseau_de_petri_a.PNG" />
+        <h4>Réseau de Pétri - b:</h4>
+        <img src="Image/reseau_de_petri_b.PNG" />
+        <h4>Loi de conservations du Réseau de Pétri - b:</h4>
+        <p>
+            La contrainte b est satisfaite par la loi de conservation, car il y aura toujours (un flux continu de voiture est supposé) au 
+            maximum, une seule voiture dans le tunnel M(P1) qui est notre constante k.
+        </p>
+        <h4>Réseau de Pétri - c:</h4>
+        <img src="Image/reseau_de_petri_c.PNG" />
+        <h4>Graphe de couverture du Réseau de Pétri - c:</h4>
+        <img src="Image/reseau_de_petri_c_graphe_de_couverture.PNG" />
+        <p>
+            Nous assumons qu'il y a toujours un flot de voiture continu qui arrive (la transition arrived0 et arrived1) au tunnel pour se rendre
+            direction Montréal ou direction South Shore. Si le conducteur allant vers le South Shore arrive en premier, ce dernier entame le tunnel 
+            en premier, une fois sorti du tunnel, la lumière pour le conducteur allant vers Montréal lui sera indiqué de s'engager dans le tunnel s'il 
+            y a un conducteur pret pour partir. Et un fois que ce dernier sera sorti du tunnel, la lumière pour la prochaine voiture allant vers le 
+            South Shore lui sera indiqué de s'engager dans le tunnel et ainsi de suite. <br />
+            La famine : Si et seulement si une ou plusieurs transitions ne peuvent être franchises de manière permanente. <br />
+            Ici, nous n'aurons jamais de famine, puisque de 1, nous avons un flux continu de voiture (arrived0 et arrived 1) 
+            et la lumière à Montréal ou au South Shore, ne change que si une voiture sort du tunnel en contre-sens et pour cela, il faut qu'il y ait une 
+            voiture de Montréal ou South Shore présente pour s'engager dans le tunnel. Si il n'y a que des voitures
+            qui veulent aller à Montréal, on aura une lumière passante pour n nombre de voitures, tant et aussi longtemps qu'il n'y a pas de voiture 
+            présente au South Shore pour aller à Montréal. Et vice-versa.
+        </p>
         <!-- Fin Modélisation et analyse du réseau de Pétri-->
 
         <!-- Début section : Justifications -->
