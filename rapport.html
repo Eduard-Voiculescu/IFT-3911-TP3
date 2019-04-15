@@ -151,12 +151,41 @@
 
         <!-- Début Discussion et justification de la qualité du design -->
         <h3>Discussion et justification de la qualité du design [10%] :</h3>
+        <ul>
+            <li>
+                En concevant cette dernière itération du projet, nous avons réaliser que les différentes database que nous utilisons 
+                (UserDatabase, ReservationDatabase, TransactionDatabase, TransportDatabase, DestinationCourseDatabase, ServiceDatabase et TransportCompanyDatabase) 
+                sont identiques (ou presque) en terme d'implémentation. Pour facilité le patron de commande et le patron de l'orbservateur, nous avons opté
+                de créer un object DatabaseObject d'où les autres databases respectives vont héritées. Cela nous permet énormément de facilité
+                la commande Undo. D'autre part, cela rajoute également de la modularisation au niveau de l'implémentation.
+            </li>
+            <li>
+                Un autre point, dans le patron de commande, il était possible que toutes les commandes faites par le volet administratifs soient héritées de <i>AdminCommands</i> mais
+                question de desgin, nous avons décidé de rappatrier les commandes de créations, modifications et de suppressions sur le même niveau.
+            </li>
+            <li>
+                Un autre point important, le patron de fabrique a été un très bon point d'encapsulation de tâches pour notre projet. 
+                Avant, dans le DM2, nous avons eu des controlleur qui avait pass assez de cohésion. C'est-à-dire que ces derniers accomplissaient 
+                certaines tâches qu'ils ne devraient pas. Maintenant, vue que nous avons des fabriques qui servent à la création de Service, TransportCompany et
+                DestinationCourse, cela permet aux controlleurs respectifs des fabriques de se rapprocher du principe de conception "Single Responsability Principle". 
+                Donc ces derniers peuvent se délaissé de la création d'entités.
+            </li>
+            <li>
+                Comme de fait, nous avons décidé de ne pas mettres les fichiers Java. Donner des justifications ou faire des évaluations sur notre code est donc impossible.
+            </li>
+            <li>
+                Concernant le patron d'état, auparavant, nous avions eu un "enum" pour représenter les états des sièges durant leur cycle de réservation.
+                Maintenant, en appliquant le patron d'état, cela nous a permis d'encapsuler chaque état dans une classe pour éviter de faire des check
+                if...elif...else ou des switch pour évaluer la valeur de l'état. L'état devient un objet où ce dernier peut varier indépendamment des objets 
+                qui composent l'espace d'état.
+            </li>
+        </ul>
         <!-- Fin Discussion et justification de la qualité du design -->
 
         <!-- Début Génération de code et implémentation du système en Java -->
         <h3>Génération de code et implémentation du système en Java [20%]:</h3>
         <p>
-            Faute de manque de temps et de manque de préparation, nous avons omit de mettre les fichiers Java.
+            Faute de manque de temps et de manque de préparation, nous avons décidé de ne pas mettre les fichiers Java.
             Une fois le code générée, nous avons jouer avec pendant quelques moments pour arriver à la conclusion
             que nous ne seront pas capable de faire fonctionner ce dernier pour la remise. 
             Un fichier readme.txt a été inclu dans le dossier intitulé Java, mais le fichier readme.txt ne contient rien concernant le code Java. 
@@ -193,23 +222,5 @@
         </p>
         <!-- Fin Modélisation et analyse du réseau de Pétri-->
 
-        <!-- Début section : Justifications -->
-        <h3>
-            Justifications:
-        </h3>
-        <ul>
-            <li>
-                En concevant cette dernière itération du projet, nous avons réaliser que les différentes database que nous utilisons 
-                (UserDatabase, ReservationDatabase, TransactionDatabase, TransportDatabase, DestinationCourseDatabase, ServiceDatabase et TransportCompanyDatabase) 
-                sont identiques (ou presque) en terme d'implémentation. Pour facilité le patron de commande et le patron de l'orbservateur, nous avons opté
-                de créer un object DatabaseObject d'où les autres databases respectives vont héritées. Cela nous permet énormément de facilité
-                la commande Undo. D'autre part, cela rajoute également de la modularisation au niveau de l'implémentation.
-            </li>
-            <li>
-                Un autre point, dans le patron de commande, il était possible que toutes les commandes faites par le volet administratifs soient héritées de <i>AdminCommands</i> mais
-                question de desgin, nous avons décidé de rappatrier les commandes de créations, modifications et de suppressions sur le même niveau.
-            </li>
-        </ul>
-        <!-- Fin section : Justifications-->
     </body>
 </html>
